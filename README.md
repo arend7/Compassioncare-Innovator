@@ -16,6 +16,6 @@ Words of Compassion utilizes Dialogflow and the GEMINI conversational AI model t
 ## Future Plans:
 We are exploring partnerships with schools and hospitals to make Words of Compassion available to more children in need of emotional support.
 ## Output:
-
+![pic1](https://github.com/arend7/Compassioncare-Innovator/assets/128407097/458a280e-f799-41e9-9d93-057f1a53e51d)
 ## Conclusion:
 Words of Compassion demonstrates the potential of AI to make a genuine human impact, particularly in promoting mental wellbeing among vulnerable populations. With advancements in empathy modeling, such as those seen in models like GEMINI, we are excited about future opportunities to create inclusive AI solutions that benefit society.
