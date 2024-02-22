@@ -1,0 +1,201 @@
+#Login page:
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 300px;
+    background-color: #fff;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+#chatbot
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class ChatServer {
+    private static final int PORT = 12345;
+    private Set<String> userNames = new HashSet<>();
+    private Set<UserThread> userThreads = new HashSet<>();
+
+    public static void main(String[] args) {
+        ChatServer server = new ChatServer();
+        server.start();
+    }
+
+    public void start() {
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+            System.out.println("Chat Server is listening on port " + PORT);
+
+            while (true) {
+                Socket socket = serverSocket.accept();
+                UserThread newUser = new UserThread(socket, this);
+                userThreads.add(newUser);
+                newUser.start();
+            }
+        } catch (IOException ex) {
+            System.err.println("Error in the server: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
+    public void broadcast(String message, UserThread excludeUser) {
+        for (UserThread user : userThreads) {
+            if (user != excludeUser) {
+                user.sendMessage(message);
+            }
+        }
+    }
+
+    public void addUser(String userName) {
+        userNames.add(userName);
+    }
+
+    public void removeUser(String userName, UserThread user) {
+        boolean removed = userNames.remove(userName);
+        if (removed) {
+            userThreads.remove(user);
+            System.out.println("The user " + userName + " has left");
+        }
+    }
+
+    public Set<String> getUserNames() {
+        return this.userNames;
+    }
+
+    public boolean hasUsers() {
+        return !this.userNames.isEmpty();
+    }
+}
+#Message
+public class Main {
+    public static void main(String[] args) {
+        String[] messages = {
+            "Luna",
+            "Connected",
+            "Excit",
+            "I feel safe and understood here.",
+            "Come join me soon!",
+            "23:52",
+            "11:05",
+            "23:53",
+            "Today 11:00",
+            "Yes, when are you",
+            "Type your message-here-",
+            "Send",
+            "I can't wait!",
+            "0:34",
+            "11:00",
+            "11:03",
+            "11:09",
+            "A",
+            "Luna Connected Excit I feel safe and understood here . Come join me soon ! 23:52 11:05 23:53 Today 11:00 Yes , when are you Type your message - here Send I can't wait ! 0:34 11:00 11:03 11:09 A"
+        };
+
+        for (String message : messages) {
+            System.out.println(message);
+            
+            try {
+                Thread.sleep(3000); // simulate delay between messages
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+#Notifications
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Notification {
+    private String content;
+    private Instant time;
+
+    public Notification(String content) {
+        this.content = content;
+        this.time = Instant.now();
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public Instant getTime() {
+        return time;
+    }
+
+    public String getFormattedTime() {
+        long secondsAgo = ChronoUnit.SECONDS.between(time, Instant.now());
+        if (secondsAgo == 0) {
+            return "just now";
+        } else if (secondsAgo == 1) {
+            return "1 second ago";
+        } else {
+            return secondsAgo + " seconds ago";
+        }
+    }
+
+    @Override
+    public String toString() {
+        return " - " + content + " (" + getFormattedTime() + ")";
+    }
+
+    public static void main(String[] args) {
+        List<Notification> notifications = new ArrayList<>();
+        notifications.add(new Notification("You have new likes on your post"));
+        notifications.add(new Notification("You have a new follower"));
+        notifications.add(new Notification("This week's highlights"));
+        notifications.add(new Notification("Post"));
+        notifications.add(new Notification("Someone commented on your post"));
+        notifications.add(new Notification("Your post has been reshared"));
+        notifications.add(new Notification("You have new likes on your post"));
+        notifications.add(new Notification("Feedback Someone commented on your Q + 49 til Follow back :"));
+
+        System.out.println("Notifications:");
+        for (Notification notification : notifications) {
+            System.out.println(notification);
+        }
+    }
+}
