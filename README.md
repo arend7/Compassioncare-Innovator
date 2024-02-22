@@ -13,6 +13,8 @@ Words of Compassion utilizes Dialogflow and the GEMINI conversational AI model t
 ## User Trials and Impact:
 + Trials with target users showed a 35% increase in positive mood after just a 5-minute chat session.
 + Children found the conversations helpful and enjoyable, indicating the effectiveness of our approach.
+## Our Model Powerpoint Presentation:-
+[Flow Chart.pptx](https://github.com/arend7/Compassioncare-Innovator/files/14378473/Flow.Chart.pptx)
 ## Future Plans:
 We are exploring partnerships with schools and hospitals to make Words of Compassion available to more children in need of emotional support.
 ## Output:
