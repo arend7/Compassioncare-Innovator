@@ -1,4 +1,4 @@
-# Team: Compassion Care-Innovators
+# Team: Compassion Care Innovators
 ## Words of Compassion: A Conversational AI Bot for Children Recovering from Trauma 
 Welcome to Words of Compassion, an innovative solution developed by the Compassion Care Innovators team. Our project addresses the critical need for emotional support for children recovering from trauma when traditional counseling services are unavailable.
 ## Problem Statement
