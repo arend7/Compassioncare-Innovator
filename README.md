@@ -17,6 +17,8 @@ Words of Compassion utilizes Dialogflow and the GEMINI conversational AI model t
 [Flow Chart.pptx](https://github.com/arend7/Compassioncare-Innovator/files/14378473/Flow.Chart.pptx)
 ## Future Plans:
 We are exploring partnerships with schools and hospitals to make Words of Compassion available to more children in need of emotional support.
+## Architecture:
+![image](https://github.com/arend7/Compassioncare-Innovator/assets/128407097/061eb9dc-0ed6-43e8-9443-9fe0173489a9)
 ## Output:
 ![pic1](https://github.com/arend7/Compassioncare-Innovator/assets/128407097/458a280e-f799-41e9-9d93-057f1a53e51d)
 
